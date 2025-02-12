@@ -1,15 +1,13 @@
-import { Text, View } from "react-native";
+import React from "react";
+import { createStackNavigator } from "@react-navigation/stack";
+import TasksScreen from "./src/screens/TasksScreen";
 
-export default function Index() {
+const Stack = createStackNavigator();
+
+export default function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={TasksScreen} />
+    </Stack.Navigator>
   );
 }
